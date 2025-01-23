@@ -13,6 +13,9 @@ return {
         "lua_ls",
         "ts_ls",
         "tailwindcss",
+        "html",
+        "emmet_ls",
+        "emmet_language_server",
         -- add more arguments for adding more language servers
       },
     },
