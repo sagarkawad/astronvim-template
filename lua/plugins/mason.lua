@@ -16,6 +16,7 @@ return {
         "html",
         "emmet_ls",
         "emmet_language_server",
+        "pylsp",
         -- add more arguments for adding more language servers
       },
     },
