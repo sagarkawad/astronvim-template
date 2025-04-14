@@ -1,5 +1,3 @@
- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -23,7 +21,6 @@ return {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
-          "dart",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -41,20 +38,23 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
-      dartls = {
-        settings = {
-          dart = {
-            showTodos = true,
-            completeFunctionCalls = true,
-            enableSdkFormatter = true,
-          },
-        },
-      }
+      "dartls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      dartls = {
+        -- Example settings (customize as needed)
+        settings = {
+          dart = {
+            completeFunctionCalls = true,
+            showTodos = true,
+            enableSdkFormatter = true,
+            lineLength = 60,
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
