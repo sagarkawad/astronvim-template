@@ -11,6 +11,14 @@ return {
           open_cmd = "tabnew",
         },
       }
+
+      -- Auto-restart Flutter after saving Dart files with 200ms delay
+      vim.api.nvim_create_autocmd("BufWritePost", {
+        pattern = "*.dart",
+        callback = function()
+          vim.defer_fn(function() vim.cmd "FlutterRestart" end, 500)
+        end,
+      })
     end,
   },
 }
