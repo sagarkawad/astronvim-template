@@ -17,7 +17,7 @@ return {
         "emmet_ls",
         "emmet_language_server",
         "pylsp",
-        "golsp",
+        "gopls",
         -- add more arguments for adding more language servers
       },
     },
